@@ -1,0 +1,7 @@
+'ipcrm/cr_playground':
+  Build:
+    - '/opt/puppetlabs/puppet/bin/gem install r10k'
+    - '/opt/puppetlabs/puppet/bin/r10k puppetfile install'
+    - '/opt/puppetlabs/puppet/bin/puppet module build'
+  PkgInclude:
+    - 'pkg/*.tar.gz'
