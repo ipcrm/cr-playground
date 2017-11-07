@@ -6,7 +6,7 @@ ipcrm/crplayground:
     - bundle install
     - gem install r10k
   Build:
-    - /opt/puppetlabs/puppet/bin/r10k puppetfile install
+    - r10k puppetfile install
     - /opt/puppetlabs/puppet/bin/puppet module build
   PkgInclude:
     - 'pkg/*.tar.gz'
