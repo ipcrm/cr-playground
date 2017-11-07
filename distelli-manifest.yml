@@ -1,0 +1,6 @@
+ipcrm/cr-playground:
+  Build:
+    - /opt/puppetlabs/puppet/bin/puppet module build
+  PkgInclude:
+    - 'pkg/*.tar.gz'
+
