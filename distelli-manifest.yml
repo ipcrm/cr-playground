@@ -1,7 +1,12 @@
 ipcrm/crplayground:
+  PreBuild:
+    - export PATH=$PATH:$HOME/.rbenv/bin
+    - rbenv global 2.3.1
+    - eval "$(rbenv init -)"
+    - bundle install
+    - gem install r10k
   Build:
-    - '/opt/puppetlabs/puppet/bin/gem install r10k'
-    - '/opt/puppetlabs/puppet/bin/r10k puppetfile install'
-    - '/opt/puppetlabs/puppet/bin/puppet module build'
+    - /opt/puppetlabs/puppet/bin/r10k puppetfile install
+    - /opt/puppetlabs/puppet/bin/puppet module build
   PkgInclude:
     - 'pkg/*.tar.gz'
