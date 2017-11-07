@@ -11,4 +11,4 @@ ipcrm/crplayground:
   PreRelease:
     - 'mv pkg/*.tar.gz .'
   PkgInclude:
-    - '*.tar.gz'
+    - './*.tar.gz'
