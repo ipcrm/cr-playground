@@ -8,5 +8,7 @@ ipcrm/crplayground:
   Build:
     - r10k puppetfile install
     - /opt/puppetlabs/puppet/bin/puppet module build
+  PreRelease:
+    - 'mv pkg/*.tar.gz .'
   PkgInclude:
-    - 'pkg/*.tar.gz'
+    - '*.tar.gz'
