@@ -9,7 +9,7 @@ ipcrm/crplayground:
     - r10k puppetfile install
     - /opt/puppetlabs/puppet/bin/puppet module build
   PreRelease:
-    - env
+    - python scripts/distelli/dist_test.py
     - 'mv pkg/*.tar.gz .'
   PkgInclude:
     - 'tse-controlrepo-*.tar.gz'
