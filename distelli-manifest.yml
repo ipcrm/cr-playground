@@ -9,9 +9,9 @@ ipcrm/crplayground:
     - r10k puppetfile install
     - /opt/puppetlabs/puppet/bin/puppet module build
   PreRelease:
-    - env
     - export API_TOKEN=$API_TOKEN
     - export DIST_USER=$DIST_USER
+    - export DISTELLI_RELBRANCH=$DISTELLI_RELBRANCH
     - python scripts/distelli/dist_test.py
     - 'mv pkg/*.tar.gz .'
   PkgInclude:
