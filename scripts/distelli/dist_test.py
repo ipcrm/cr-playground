@@ -12,6 +12,8 @@ server_id = '6fc26295-c1ef-714d-9250-fa163e70163'
 current_env = os.environ['DISTELLI_RELBRANCH']
 url = "%s/%s/apps/%s/envs?apiToken=%s" % (apiurl,username,appName,apiToken)
 response = requests.get(url)
+
+print response.json()
 data = response.json()
 
 # Store list of envs
