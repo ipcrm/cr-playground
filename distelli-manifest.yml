@@ -9,8 +9,10 @@ ipcrm/crplayground:
     - r10k puppetfile install
     - /opt/puppetlabs/puppet/bin/puppet module build
   PreRelease:
+    - env
     - 'mv pkg/*.tar.gz .'
   PkgInclude:
     - 'tse-controlrepo-*.tar.gz'
   PostInstall:
-    - env
+    - tar zxvf tse-controlrepo-*
+    - mv tse-controlrepo-* /etc/puppetlabs/code/environments/
