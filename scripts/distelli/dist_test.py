@@ -45,8 +45,8 @@ if not server_id in servers:
   url = "%s/%s/envs/%s/servers?apiToken=%s" % (apiurl,username,current_env,apiToken)
   response = requests.put(url, headers = {'Content-Type':'application/json'})
 
-  patch_data['deploy'] = True
   patch_data = {}
+  patch_data['deploy'] = True
   patch_data['servers'] = [server_id]
   patch_data['action'] = 'add'
 
