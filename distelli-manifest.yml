@@ -12,3 +12,5 @@ ipcrm/crplayground:
     - 'mv pkg/*.tar.gz .'
   PkgInclude:
     - 'tse-controlrepo-*.tar.gz'
+  PostInstall:
+    - env
