@@ -17,5 +17,4 @@ ipcrm/crplayground:
   PkgInclude:
     - 'tse-controlrepo-*.tar.gz'
   PostInstall:
-    - tar zxvf tse-controlrepo-*
-    - mv tse-controlrepo-* /etc/puppetlabs/code/environments/
+    - sh -x scripts/distelli/release_me.sh
