@@ -6,7 +6,7 @@ apiToken = os.environ['API_TOKEN']
 username = os.environ['DIST_USER']
 apiurl = "https://api.distelli.com"
 appName = 'crplayground' # Move to ENV
-server_id = '6fc26295-c1ef-714d-9250-fa163e70163'
+server_id = '6fc26295-c1ef-714d-9250-fa163e701634'
 
 # List App Envs
 current_env = os.environ['DISTELLI_RELBRANCH']
