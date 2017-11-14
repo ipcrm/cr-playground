@@ -18,5 +18,6 @@ ipcrm/crplayground:
     - 'tse-controlrepo-*.tar.gz'
   PostInstall:
     - tar zxvf tse-controlrepo-*
+    - rm -f tse-controlrepo-*.tar.gz
     - mv tse-controlrepo-* $DISTELLI_RELBRANCH
     - sh -x $DISTELLI_RELBRANCH/scripts/distelli/release_me.sh
