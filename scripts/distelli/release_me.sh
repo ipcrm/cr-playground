@@ -1,21 +1,11 @@
 #!/bin/sh
 
 # Extract and move code into place, staging
-if [ $DISTELLI_RELBRANCH != 'production' ]; then
-  if [ -d "/etc/puppetlabs/code-staging/environments/${DISTELLI_RELBRANCH}" ]; then
-    sudo rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_RELBRANCH
-    sudo mv $DISTELLI_RELBRANCH /etc/puppetlabs/code-staging/environments/
-  else
-    sudo mv $DISTELLI_RELBRANCH /etc/puppetlabs/code-staging/environments/
-  fi
+if [ -d "/etc/puppetlabs/code-staging/environments/${DISTELLI_ENV}" ]; then
+  sudo rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV
+  sudo mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV
 else
-  mv $DISTELLI_RELBRANCH $DISTELLI_RELVERSION
-  if [ -d "/etc/puppetlabs/code-staging/environments/${DISTELLI_RELVERSION}" ]; then
-    sudo rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_RELVERSION
-    sudo mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/
-  else
-    sudo mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/
-  fi
+  sudo mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV
 fi
 
 # Commit code in staging to live
