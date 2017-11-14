@@ -17,6 +17,7 @@ ipcrm/crplayground:
   PkgInclude:
     - 'tse-controlrepo-*.tar.gz'
   PostInstall:
+    - env
     - export DISTELLI_RELBRANCH=$DISTELLI_RELBRANCH
     - export DISTELLI_RELVERSION=$DISTELLI_RELVERSION
     - tar zxvf tse-controlrepo-*
