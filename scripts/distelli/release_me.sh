@@ -9,7 +9,7 @@ if [ $DISTELLI_RELBRANCH != 'production' ]; then
     sudo mv $DISTELLI_RELBRANCH /etc/puppetlabs/code-staging/environments/
   fi
 else
-  tar zxvf tse-controlrepo-* $DISTELLI_RELVERSION
+  mv $DISTELLI_RELBRANCH $DISTELLI_RELVERSION
   if [ -d "/etc/puppetlabs/code-staging/environments/${DISTELLI_RELVERSION}" ]; then
     sudo rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_RELVERSION
     sudo mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/
