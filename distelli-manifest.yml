@@ -13,6 +13,7 @@ ipcrm/crplayground:
     - export DIST_USER=$DIST_USER
     - export DISTELLI_RELBRANCH=$DISTELLI_RELBRANCH
     - python scripts/distelli/dist_test.py
+    - env
     - 'mv pkg/*.tar.gz .'
   PkgInclude:
     - 'tse-controlrepo-*.tar.gz'
