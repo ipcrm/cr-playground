@@ -19,6 +19,6 @@ ipcrm/crplayground:
   PostInstall:
     - tar zxvf tse-controlrepo-*
     - rm -f tse-controlrepo-*.tar.gz
-    - sudo mv tse-controlrepo-* $DISTELLI_RELBRANCH
+    - mv tse-controlrepo-* $DISTELLI_RELBRANCH
     - sudo chown pe-puppet.pe-puppet -R $DISTELLI_RELBRANCH
-    - sh -x $DISTELLI_RELBRANCH/scripts/distelli/release_me.sh
+    - sudo sh -x $DISTELLI_RELBRANCH/scripts/distelli/release_me.sh
