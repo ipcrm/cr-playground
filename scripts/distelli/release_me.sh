@@ -2,7 +2,6 @@
 
 # Extract and move code into place, staging
 if [ $DISTELLI_RELBRANCH != 'production' ]; then
-  tar zxvf tse-controlrepo-* $DISTELLI_RELBRANCH
   if [ -d "/etc/puppetlabs/code-staging/environments/${DISTELLI_RELBRANCH}" ]; then
     rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_RELBRANCH
     mv $DISTELLI_RELBRANCH /etc/puppetlabs/code-staging/environments/
