@@ -3,29 +3,29 @@
 # Extract and move code into place, staging
 if [ $DISTELLI_RELBRANCH != 'production' ]; then
   if [ -d "/etc/puppetlabs/code-staging/environments/${DISTELLI_RELBRANCH}" ]; then
-    rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_RELBRANCH
-    mv $DISTELLI_RELBRANCH /etc/puppetlabs/code-staging/environments/
+    sudo rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_RELBRANCH
+    sudo mv $DISTELLI_RELBRANCH /etc/puppetlabs/code-staging/environments/
   else
-    mv $DISTELLI_RELBRANCH /etc/puppetlabs/code-staging/environments/
+    sudo mv $DISTELLI_RELBRANCH /etc/puppetlabs/code-staging/environments/
   fi
 else
   tar zxvf tse-controlrepo-* $DISTELLI_RELVERSION
   if [ -d "/etc/puppetlabs/code-staging/environments/${DISTELLI_RELVERSION}" ]; then
-    rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_RELVERSION
-    mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/
+    sudo rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_RELVERSION
+    sudo mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/
   else
-    mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/
+    sudo mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/
   fi
 fi
 
 # Commit code in staging to live
 [ "$1" = '-v' ] && verbose='true' || verbose=
-certname=$(puppet config print certname --section agent)
+certname=$(sudo puppet config print certname --section agent)
 
 curl_wrapper()
 {
   [ "$verbose" = 'true' ] && echo "command: curl $@"
-  output=$(curl "$@")
+  output=$(sudo curl "$@")
   exitcode=$?
   if [ "$verbose" = 'true' ]; then
     echo "output: $output"
