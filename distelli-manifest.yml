@@ -24,6 +24,7 @@ ipcrm/crplayground:
     - rm -f tse-controlrepo-*.tar.gz
     - mv tse-controlrepo-* $DISTELLI_RELVERSION
     - sudo chown pe-puppet.pe-puppet -R $DISTELLI_RELVERSION
-    - sh -x $DISTELLI_RELVERSION/scripts/distelli/release_me.sh
+    - sudo rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV
+    - sudo mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV
     - sudo python /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV/scripts/distelli/dist_rm_envs.py
     - sh -x /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV/scripts/distelli/puppet-code-commit
