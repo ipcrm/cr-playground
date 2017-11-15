@@ -29,4 +29,4 @@ ipcrm/crplayground:
     - sudo rm -rf /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV
     - sudo mv $DISTELLI_RELVERSION /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV
     - sudo -E python /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV/scripts/distelli/dist_rm_envs.py
-    - sh -x /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV/scripts/distelli/puppet-code-commit
+    - sudo sh -x /etc/puppetlabs/code-staging/environments/$DISTELLI_ENV/scripts/distelli/puppet-code-commit
