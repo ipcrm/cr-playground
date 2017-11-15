@@ -2,6 +2,7 @@ import requests
 import json
 import os
 from glob import glob
+import shutil
 
 apiToken = os.environ['API_TOKEN']
 username = os.environ['DIST_USER']
