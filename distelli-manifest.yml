@@ -19,6 +19,8 @@ ipcrm/crplayground:
     - 'tse-controlrepo-*.tar.gz'
   PostInstall:
     - env
+    - export API_TOKEN=$API_TOKEN
+    - export DIST_USER=$DIST_USER
     - export DISTELLI_RELVERSION=$DISTELLI_RELVERSION
     - tar zxvf tse-controlrepo-*
     - rm -f tse-controlrepo-*.tar.gz
