@@ -5,6 +5,7 @@ ipcrm/crplayground:
     - eval "$(rbenv init -)"
     - bundle install
     - gem install r10k
+    - env
   Build:
     - r10k puppetfile install
     - /opt/puppetlabs/puppet/bin/puppet module build
